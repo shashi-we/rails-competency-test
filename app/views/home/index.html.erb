@@ -1,0 +1,12 @@
+<div class="well">
+  <%= link_to "List of Articles", articles_path, class: "btn btn-primary" %>
+</div>
+<% @article_categories.each do |article_category| %>
+  <div class="jumbotron">
+    <h4><%= article_category.name%></h4>
+    <% list_default_articles(article_category).each do |article| %>
+      <h5 class="text-primary"><%= article.title %></h5>
+      <h6><%= article.content %></h6>
+    <% end %>
+  </div>
+<% end %>
